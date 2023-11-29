@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>오늘의 일기</legend>
+            <div>
+                <label for="weather">오늘 날씨</label>
+                <select id="weather">
+                    <option value="clear" selected>맑음</option>
+                    <option value="cloudy">흐림</option>
+                    <option value="rain">비</option>
+                    <option value="snow">눈</option>
+                </select>
+            </div>
+            <div>
+                <label for="feeling">오늘의 기분</label>
+                <input type="text" id="feeling" list="f_list">
+                <datalist id="f_list">
+                    <option value="good">좋음</option>
+                    <option value="happy">행복함</option>
+                    <option value="angry">화남</option>
+                    <option value="sad">슬픔</option>
+                </datalist>
+            </div>
+            <div>
+                <div>
+                    <label for="diary">일기 작성</label>
+                </div>
+                <div>
+                    <textarea id="diary" cols="50" rows="20"></textarea>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
