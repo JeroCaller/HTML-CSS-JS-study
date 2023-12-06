@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+        }
+        p {
+            font-size: 15px; 
+            /*
+                line-height 속성은 해당 텍스트 글자 크기를 기준으로 
+                상대적 크기로 줄 간 간격을 지정할 수도 있다. 
+            */
+        }
+        .pixel {
+            line-height: 20px;
+        }
+        .multiple {
+            line-height: 3.0; /* = 15*3.0 = 45px*/
+        }
+        .percent {
+            line-height: 200%; /* = 15*200% = 30px */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p class="pixel">
+            한가로운 봄날, 작은 공원에서 나무 그늘 아래에 앉아 책을 읽고 있습니다. 
+            바람은 부드럽게 불어와 신선한 냄새를 실어줍니다. 
+            주위에는 새들의 지저귐과 풀밭에서 피어나는 꽃들의 아름다운 향기가 가득합니다. 
+            시간은 천천히 흐르고 마음은 평온해집니다.
+        </p>
+    </div>
+    <div>
+        <p class="multiple">
+            한가로운 봄날, 작은 공원에서 나무 그늘 아래에 앉아 책을 읽고 있습니다. 
+            바람은 부드럽게 불어와 신선한 냄새를 실어줍니다. 
+            주위에는 새들의 지저귐과 풀밭에서 피어나는 꽃들의 아름다운 향기가 가득합니다. 
+            시간은 천천히 흐르고 마음은 평온해집니다.
+        </p>
+    </div>
+    <div>
+        <p class="percent">
+            한가로운 봄날, 작은 공원에서 나무 그늘 아래에 앉아 책을 읽고 있습니다. 
+            바람은 부드럽게 불어와 신선한 냄새를 실어줍니다. 
+            주위에는 새들의 지저귐과 풀밭에서 피어나는 꽃들의 아름다운 향기가 가득합니다. 
+            시간은 천천히 흐르고 마음은 평온해집니다.
+        </p>
+    </div>
+</body>
+</html>
