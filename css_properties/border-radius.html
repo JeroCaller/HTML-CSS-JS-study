@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 30px;
+            border: 3px solid black;
+        }
+        .object1 {
+            width: 300px;
+            height: 100px;
+            border-radius: 30px;
+        }
+        .object2 {
+            width: 100px;
+            height: 100px;
+            /* 
+                박스의 너비와 높이를 똑같이 한 후, 
+                border-radius 속성값을 50%으로 설정하면 
+                원이 된다.
+            */
+            border-radius: 50%;
+        }
+        .object3 {
+            width: 300px;
+            height: 100px;
+            /*
+                border-radius 속성값에 슬래시(/)를 기준으로 
+                왼쪽에는 가로 반지름의 값을, 오른쪽에는 세로 반지름
+                의 값을 대입하면 타원 모양이 되며, 둘 다 
+                50%으로 하면 완전한 타원 모양이 된다. 
+            */
+            border-radius: 50% / 50%;
+        }
+        .object4 {
+            width: 300px;
+            height: 100px;
+            /*
+                슬래시가 없더라도 타원 모양이 된다.
+            */
+            border-radius: 50% 50%;
+        }
+        .object5 {
+            width: 300px;
+            height: 100px;
+            /*
+                네 모서리 중 일부에만 앞서 설명한 
+                원 또는 타원이 될 조건의 속성값을 대입하면 
+                해당 모서리만 원 또는 타원 모양이 된다.
+            */
+            border-top-right-radius: 50%;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 50% 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="object1"></div>
+    <div class="object2"></div>
+    <div class="object3"></div>
+    <div class="object4"></div>
+    <div class="object5"></div>
+</body>
+</html>

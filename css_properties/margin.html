@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div { 
+            border: 3px solid black;
+            width: 300px;
+            height: 100px;
+        }
+        #box1 { 
+            /* 동서남북 4방향 모두 일괄적으로 적용.*/
+            margin: 10px; 
+        } 
+        #box2 { 
+            /* 위아래 10px, 좌우 20px */
+            margin: 10px 20px; 
+        } 
+        #box3 { 
+            /* 위 10px, 좌우 20px, 아래 30px*/
+            margin: 10px 20px 30px; 
+        } 
+        #box4 { 
+            /* 차례대로 위, 오른쪽, 아래, 왼쪽에 적용.*/
+            margin: 10px 20px 30px 40px;
+        } 
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="box4"></div>
+</body>
+</html>
