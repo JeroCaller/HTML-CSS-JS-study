@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box1 {
+            border: 5px solid black;
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            /* 컨텐츠 크기 + padding + border 두께 값 모두 합쳐 
+            width=200px, height=100px이 되도록 핢.*/
+            box-sizing: border-box;
+            /* 다음 줄은 박스를 웹 브라우저의 가운데로 정렬한다. */
+            margin: 10px auto;
+            /* 글자도 박스의 정중앙에 배치하고자 한다면 다음의 3줄 코드 삽입.*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box2 {
+            border: 5px solid black;
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            /* 컨텐츠 너비만 200px, 높이만 100px가 되도록 함.*/
+            box-sizing: content-box;
+            /* 다음 줄은 박스를 웹 브라우저의 가운데로 정렬한다. */
+            margin: 10px auto;
+            /* 글자도 박스의 정중앙에 배치하고자 한다면 다음의 3줄 코드 삽입.*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        box1
+    </div>
+    <div class="box2">
+        box2
+    </div>
+</body>
+</html>

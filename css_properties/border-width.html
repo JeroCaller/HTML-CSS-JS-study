@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 100px;
+            margin: 20px;
+            border-style: solid;
+            border-color: black;
+        }
+        .box1 { 
+            /* 상하좌우의 경계선의 두께를 모두 10px로 한다.*/
+            border-width: 10px;
+        }
+        .box2 { 
+            /*
+                위 아래의 두꼐는 thin, 좌우의 두께는 thick으로 한다. 
+            */
+            border-width: thin thick;
+        }
+        .box3 {
+            /*
+                경계선 위쪽부터 시계방향으로 진행하여 적용된다.
+                위쪽은 thin, 오른쪽은 medium, 아래쪽은 thick이 적용된다. 
+                왼쪽은 마주보는 오른쪽의 속성값인 medium을 그대로 가진다.
+            */
+            border-width: thin medium thick;
+        }
+        .box4 {
+            /*
+                경계선 위쪽부터 시계방향으로 진행하여 적용된다. 
+                위쪽은 thin, 오른쪽은 medium, 아래쪽은 thick, 왼쪽은 20px
+                이 적용되었다.
+            */
+            border-width: thin medium thick 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">box4</div>
+</body>
+</html>

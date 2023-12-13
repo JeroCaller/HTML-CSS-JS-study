@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            /* 글자를 박스의 정중앙에 배치하고자 한다면 다음의 3줄 코드 삽입.*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* --- */
+            margin: 50px;
+            width: 500px;
+            height: 100px;
+            border-style: solid;
+            border-width: 5px;
+        }
+        .box1 {border-color: black;}
+        .box2 {
+            border-top-color: blue;
+            border-right-color: bisque;
+            border-bottom-color: blueviolet;
+            border-left-color: chocolate;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+</body>
+</html>
