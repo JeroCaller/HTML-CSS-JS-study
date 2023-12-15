@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .bigedge {
+            padding: 20px;
+            margin: 30px;
+            border: 3px solid black;
+        }
+        .box {
+            width: 200px;
+            height: 100px;
+        }
+        .box2 {
+            display: inline-block;
+        }
+        #colbox1 {
+            border: 2px solid brown;
+            margin: 30px auto;
+        }
+        #colbox2 {
+            border: 2px solid blueviolet;
+            margin: 20px auto;
+        }
+        #colbox3 {
+            border: 2px solid goldenrod;
+            margin: 10px auto;
+        }
+        #rowbox1 {
+            border: 2px solid cadetblue;
+            margin: auto 30px;
+        }
+        #rowbox2 {
+            border: 2px solid darkkhaki;
+            margin: auto 20px;
+        }
+        #rowbox3 {
+            border: 2px solid firebrick;
+            margin: auto 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bigedge">
+        <div class="box" id="colbox1"></div>
+        <div class="box" id="colbox2"></div>
+        <div class="box" id="colbox3"></div>
+    </div>
+    <div class="bigedge">
+        <div class="box box2" id="rowbox1"></div>
+        <div class="box box2" id="rowbox2"></div>
+        <div class="box box2" id="rowbox3"></div>
+    </div>
+</body>
+</html>

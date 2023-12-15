@@ -1,0 +1,43 @@
+#webpage {
+    margin: 10px auto;
+}
+.allbox {
+    /*
+        box-sizing: border-box; 속성을 적용하지 않으면 
+        오른쪽 사이드바와 헤더, 푸터 영역의 오른쪽 너비가 맞지 않는 
+        문제가 발생한다.
+    */
+    box-sizing: border-box;
+}
+.ends {
+    width: 100%;
+    height: 100px;
+}
+#header {
+    border: 3px solid black;
+    background-color: aquamarine;
+}
+.middle {
+    height: 480px;
+}
+.sidebar {
+    width: 20%;
+    border: 3px solid slateblue;
+    background-color: blueviolet;
+}
+#sidebar_left {
+    float: left;
+}
+#sidebar_right {
+    float: right;
+}
+#main {
+    width: 100%;
+    border: 3px solid rosybrown;
+    background-color: darkseagreen;
+}
+#footer {
+    clear: both;
+    border: 3px solid darkmagenta;
+    background-color: darkkhaki;
+}
