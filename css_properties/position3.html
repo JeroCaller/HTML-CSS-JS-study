@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" 
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        #edge {
+            width: 90%;
+            height: 500px;
+            border: 1px solid black;
+            padding: 10px;
+            position: relative;
+        }
+        p {
+            display: inline;
+        }
+        .msgbox {
+            /* 글자를 박스의 정중앙에 배치하고자 한다면 다음의 3줄 코드 삽입.*/
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            /* --- */
+            border: 2px solid blue;
+            padding: 5px;
+            margin: 5px;
+            width: 500px;
+            height: 100px;
+        }
+        .pos1 {
+            position: absolute;
+            left: 100px;
+            top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="edge">
+        <div class="msgbox">
+            <span class="material-symbols-outlined">Warning</span>
+            <p>ItsGonnaRaiseError: 에러가 발생할 것 같습니다!!</p>
+        </div>
+        <!--원래 박스의 위치-->
+        <div class="msgbox" style="border: 2px solid red">
+            <span class="material-symbols-outlined">Warning</span>
+            <p>ActuallyNoErrorOccured: 에러가 안 발생했습니다!</p>
+        </div>
+        <!--position:relative를 적용한 박스의 위치-->
+        <div class="msgbox pos1">
+            <span class="material-symbols-outlined">Warning</span>
+            <p>ActuallyNoErrorOccured: 에러가 안 발생했습니다!</p>
+        </div>
+    </div>
+</body>
+</html>
