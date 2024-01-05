@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            border: 10px dotted black;
+            background-image: url('..\\images\\colorful-waves.jpeg');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            height: 100px;
+            margin: 10px;
+            padding: 20px;
+        }
+        .box1 {
+            background-origin: content-box;
+        }
+        .box2 {
+            background-origin: padding-box;
+        }
+        .box3 {
+            background-origin: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>

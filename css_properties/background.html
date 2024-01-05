@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .allbox {
+            border: 10px dotted black;
+            width: 200px;
+            height: 100px;
+            padding: 10px;
+            margin: 10px;
+            background-color: darkseagreen;
+        }
+        .box1 {
+            background-clip: border-box;
+        }
+        .box2 {
+            background-clip: content-box;
+        }
+        .box3 {
+            background-clip: padding-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="allbox box1">This is box 1</div>
+    <div class="allbox box2">This is box 2</div>
+    <div class="allbox box3">This is box 3</div>
+</body>
+</html>
