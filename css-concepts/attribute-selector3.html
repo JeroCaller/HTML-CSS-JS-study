@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        li {
+            margin: 20px;
+        }
+        /* a 태그 중 href 속성의 값이 www로 시작하는 요소에 적용.*/
+        a[href^=www] {
+            border: 5px solid black;
+        }
+        /* a 태그 중 href 속성의 값이 org로 끝나는 요소에 적용.*/
+        a[href$=org] {
+            border: 5px dashed violet;
+        }
+        /* 
+            a 태그 중 href 속성의 값에 news가 포함되어 있는 요소에 적용.
+            news가 속성값 내에 어느 위치에 있든 상관없이 존재하기만 하면 
+            해당 선택자의 선택을 받는다. 
+         */
+        a[href*=news] {
+            border: 5px solid green;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="www.google.com">Google</a></li>
+        <li><a href="developer.mozilla.org">Mozilla</a></li>
+        <li><a href="www.daum.net">Daum</a></li>
+        <li><a href="https://news.einfomax.co.kr">einfomax</a></li>
+        <li><a href="https://news.google.com">Google news</a></li>
+    </ul>
+</body>
+</html>
