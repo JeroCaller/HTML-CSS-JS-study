@@ -1,0 +1,65 @@
+#webtitle {
+    text-align: center;
+}
+#page {
+    border: 1px solid black;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+}
+#toc {
+    border: 1px solid black;
+    width: 80%;
+    margin: auto;
+    padding: 1px 10px;
+}
+#toc a:link {
+    /* 한 번도 방문한 적 없는 링크에 대한 스타일 지정 */
+    text-decoration: none;
+    color: black;
+}
+#toc a:visited {
+    /* 한 번이라도 방문한 적 있는 링크에 대한 스타일 지정 */
+    font-size: large;
+    color: cadetblue;
+}
+#toc a:hover {
+    background-color: darkgray;
+}
+#toc a:active {
+    /* 링크 클릭 순간의 스타일 지정 */
+    background-color: red;
+}
+#toc ul li {
+    margin: 3px;
+}
+.partition {
+    border: solid grey;
+    border-width: 1px 0px 0px 0px;
+    margin: 10px auto;
+    width: 95%;
+}
+.parabox {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 10px auto;
+}
+.parabox p {
+    text-align: justify;
+}
+.parabox h1:hover {
+    background-color:chartreuse;
+}
+.parabox p::first-letter {
+    font-size: larger;
+    font-weight: bold;
+    color: darkmagenta;
+}
+.parabox h1::after {
+    content: "AI 소설";
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: lighter;
+    color: burlywood;
+    background-color: blueviolet;
+}
