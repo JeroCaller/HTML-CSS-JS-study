@@ -1,0 +1,26 @@
+.card {
+    border: 2px solid black;
+    width: 110px;
+    height: 170px;
+    float: left;
+    margin: 70px;
+}
+.three-g {
+    background-image: url("..\\images\\3gwang.png");
+    background-size: cover;
+}
+.eight-g {
+    background-image: url("..\\images\\8gwang.png");
+    background-size: cover;
+}
+.cover {
+    background-color: red;
+    background-size: cover;
+    margin: 0px;
+}
+#goto-x:hover {
+    transform: translateX(50px);
+}
+#goto-y:hover {
+    transform: translateY(70px);
+}
