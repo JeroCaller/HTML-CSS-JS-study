@@ -1,0 +1,30 @@
+#container {
+    margin: 30px;
+}
+
+/* 박스 기본 설정 */
+.box-container {
+    display: inline-block;
+    margin: 40px;
+}
+.box-container p {
+    text-align: center;
+}
+.box {
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+    background-image: url("..\\images\\flowers.jpeg");
+    background-size: cover;
+    margin: auto;
+}
+
+#skew-x:hover {
+    transform: skewX(20deg);
+}
+#skew-y:hover {
+    transform: skewY(20deg);
+}
+#skew-xy:hover {
+    transform: skew(-20deg, 20deg);
+}

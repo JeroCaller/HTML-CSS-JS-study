@@ -1,0 +1,38 @@
+/* 틀 설정 */
+#container {
+    margin: 30px;
+}
+
+/* 박스 기본 설정 */
+.box-container {
+    display: inline-block;
+    margin: 20px;
+}
+.box-container p {
+    text-align: center;
+}
+.box {
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+    background-image: url("..\\images\\flowers.jpeg");
+    background-size: cover;
+    margin: auto;
+}
+
+.pers-on {
+    perspective: 200px;
+}
+
+.rotate-x:hover {
+    transform: rotateX(60deg);
+}
+.rotate-y:hover {
+    transform: rotateY(60deg);
+}
+.rotate-z:hover {
+    transform: rotateZ(60deg);
+}
+.rotate-vector:hover {
+    transform: rotate3d(5, 6, 7, 30deg);
+}

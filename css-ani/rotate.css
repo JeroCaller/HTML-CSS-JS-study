@@ -1,0 +1,25 @@
+#container > h1 {
+    text-align: center;
+}
+#box-container {
+    margin: auto 10px;
+    display: flex; 
+    justify-content: center;
+}
+.box {
+    width: 200px;
+    height: 200px;
+    margin: 50px;
+    background-image: url("..\\images\\arrow.png");
+    background-size: cover;
+}
+#ui {
+    text-align: center;
+}
+
+#arrow-hour:hover {
+    transform: rotate(90deg);
+}
+#arrow-minute:hover {
+    transform: rotate(-100deg);
+}
