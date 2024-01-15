@@ -18,6 +18,9 @@
 .scale-y:hover {
     transform: scaleY(1.5);
 }
+.scale-shrink:hover {
+    transform: scale(0.6, 0.7);
+}
 
 #sleep {
     border: 1px solid black;
