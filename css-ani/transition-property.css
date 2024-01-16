@@ -1,0 +1,62 @@
+/* 실험을 위한 기본 설정*/
+#page {
+    margin: 50px auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* 실험을 위한 박스 기본 설정. */
+.box-container {
+    display: inline-block;
+    margin: 30px;
+}
+.box-container p {
+    text-align: center;
+}
+
+/* 실험을 위한 스타일 설정 */
+#tr-all {
+    background-color:cadetblue;
+    border: 2px solid blue;
+    width: 100px;
+    height: 100px;
+    transition-property: all;
+    transition-duration: 3s;
+}
+#tr-all:hover {
+    background-color: darkorange;
+    border: 10px dashed brown;
+    width: 300px;
+    height: 300px;
+}
+
+#tr-none {
+    background-color:cadetblue;
+    border: 2px solid blue;
+    width: 100px;
+    height: 100px;
+    transition-property: none;
+    transition-duration: 3s;
+}
+#tr-none:hover {
+    background-color: darkorange;
+    border: 10px dashed brown;
+    width: 300px;
+    height: 300px;
+}
+
+#tr-target {
+    background-color:cadetblue;
+    border: 2px solid blue;
+    width: 100px;
+    height: 100px;
+    transition-property: background-color;
+    transition-duration: 3s;
+}
+#tr-target:hover {
+    background-color: darkorange;
+    border: 10px dashed brown;
+    width: 300px;
+    height: 300px;
+}
