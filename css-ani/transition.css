@@ -1,0 +1,37 @@
+.scroll {
+    width: 80px;
+    height: 500px;
+    margin: 50px auto;
+    background-image: url('..\\images\\scroll.png');
+    background-size: cover;
+    position: relative;
+    transition-duration: 3s;
+}
+
+/* 마우스 커서를 scroll 클래스 영역에 가져다 대지 않은 상태에서의 
+스타일 규칙 설정 */
+.for-text {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 20%;
+    top: 20%;
+}
+.for-text p {
+    opacity: 0;
+}
+
+/* 마우스 커서를 scroll 클래스 영역에 가져다 대었을 때에의 스타일 규칙 설정. */
+.scroll:hover p{
+    opacity: 1;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+}
+.scroll:hover .for-text {
+    background-image: url('..\\images\\new_year_in_korea.jpeg');
+    background-size: cover;
+}
+.scroll:hover {
+    width: 500px;
+}
