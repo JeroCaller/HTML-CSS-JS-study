@@ -1,0 +1,41 @@
+#image-frame {
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+    margin: 100px auto;
+    position: relative;
+    animation-name: img-change;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes img-change {
+    from {
+        background-image: url("..\\images\\colorful-waves.jpeg");
+        background-size: cover;
+    }
+    17% {
+        background-image: url("..\\images\\flowers.jpeg");
+        background-size: cover;
+    }
+    34% {
+        background-image: url("..\\images\\korean-new-year.jpg");
+        background-size: cover;
+    }
+    51% {
+        background-image: url("..\\images\\new_year_in_korea.jpeg");
+        background-size: cover;
+    }
+    68% {
+        background-image: url("..\\images\\plants.jpeg");
+        background-size: cover;
+    }
+    85% {
+        background-image: url("..\\images\\spaceman.png");
+        background-size: cover;
+    }
+    to {
+        background-image: url("..\\images\\desert-world.jpeg");
+        background-size: cover;
+    }
+}
