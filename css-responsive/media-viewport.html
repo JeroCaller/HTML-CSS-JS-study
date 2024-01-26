@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box { 
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            display: inline-block;
+        }
+        .box p {
+            text-align: center;
+        }
+        @media screen and (max-width:800px) {
+            /* 뷰포트의 최대 너비가 800px일 경우.*/
+            /* 
+                브라우저 창의 너비를 800px 이하로 줄일 경우, 
+                상자들의 배치가 가로에서 세로로 바뀐다. 
+            */
+            .box {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="box">
+            <p>Box 1</p>
+        </div>
+        <div class="box">
+            <p>Box 2</p>
+        </div>
+    </div>
+</body>
+</html>
