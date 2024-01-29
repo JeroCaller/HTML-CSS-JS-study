@@ -1,0 +1,90 @@
+header {
+    border: 1px solid black;
+    width: 90%;
+    height: 100px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: antiquewhite;
+}
+header h1 {
+    text-align: center;
+}
+
+#middle {
+    border: 1px solid black;
+    position: relative;
+    background-color: aquamarine;
+    width: 100%;
+    height: 500px;
+}
+#middle aside {
+    border: 1px solid black;
+    background-color: cadetblue;
+    position: absolute;
+    width: 250px;
+    height: 500px;
+    transition: all 1s;
+    transform: translate(-230px);
+    z-index: 1;
+    opacity: 0;
+}
+#sidebar-title {
+    background-color: black;
+    top: 0px;
+}
+#sidebar-title h3 {
+    text-align: center;
+    color: bisque;
+    margin: 0px;
+    height: 50px;
+    /* 글자를 박스의 정중앙에 배치. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* --- */
+}
+#middle aside ul {
+    list-style: none;
+    margin: 0px;
+}
+#middle aside li {
+    background-color: grey;
+    border: 1px solid rgb(66, 64, 64);
+    height: 100px;
+    margin-left: -40px;
+    /* 글자를 박스의 정중앙에 배치 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* --- */
+    font-size: larger;
+}
+#middle aside li a {
+    text-decoration: none;
+    color: black;
+}
+#middle aside:hover {
+    transform: translate(0px);
+    opacity: 1;
+}
+#middle main {
+    padding: 20px;
+}
+#middle main p {
+    text-align: justify;
+    padding: 50px;
+    font-size: 18px;
+    line-height: 2.0;
+}
+
+@media screen and (max-width:1120px) {
+    #middle main p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+}
+@media screen and (max-width:700px) {
+    #middle main p {
+        padding: 0px;
+    }
+}
