@@ -1,0 +1,51 @@
+#container {
+    position: relative;
+}
+.sub-edge {
+    width: 500px;
+    height: 500px;
+}
+#sub-container1 {
+    border: 2px solid blue;
+    position: absolute;
+    z-index: 1;
+}
+#sub-container2 {
+    border: 2px solid red;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 2;
+}
+.box {
+    position: absolute;
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+}
+.box p {
+    text-align: right;
+}
+
+#box1 {
+    background-color: aquamarine;
+    z-index: 3;
+}
+#box2 {
+    background-color: bisque;
+    left: 70px;
+    top: 80px;
+    z-index: 2;
+}
+#box3 {
+    background-color: coral;
+    left: 50px;
+    top: 110px;
+    z-index: 1;
+}
+#box4 {
+    background-color: cornflowerblue;
+    left: 110px;
+    top: 180px;
+    z-index: 0;
+}
