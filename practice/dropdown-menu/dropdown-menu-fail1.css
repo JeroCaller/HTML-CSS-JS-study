@@ -1,0 +1,79 @@
+nav {
+    /* nav 내 모든 자식 요소들을 수평 중앙 정렬 */
+    display: flex;
+    justify-content: center;
+}
+ul {
+    list-style: none;
+}
+
+#parent-ul > li {
+    float: left;
+    width: 150px;
+    margin-right: 10px;
+    padding: 0px;
+    text-align: center;
+}
+#parent-ul h3 {
+    margin: 0px;
+    height: 40px;
+    /* 글자를 박스의 정중앙에 배치 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* --- */
+    background-color: #6665AD;
+    color: #EBD983;
+}
+
+.child-ul {
+    position: relative;
+    padding: 0px;
+    /* 문제 발생 지점 */
+    transition: all 1s;
+    transform: translateY(-300px);
+    opacity: 0;
+    /* --- */
+}
+.child-ul a {
+    text-decoration: none;
+    color: brown;
+}
+.child-ul li {
+    height: 50px;
+    /* 글자를 박스의 정중앙에 배치 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* --- */
+    background-color: #13BEEB;
+    color: #EBA86A;
+    transition: all 0.5s;
+}
+
+#parent-ul:hover .child-ul {
+    /* 문제 발생 지점 */
+    /*
+        상위 메뉴 아래의 하위 메뉴 영역에 마우스를 가져다 대도 
+        하위 메뉴가 나타남. 원래는 상위 메뉴에 마우스를 가져다 댈 때만 
+        나타나야 함. 
+        이는 child-ul의 영역을 translateY를 통해 얼만큼 이동시켜도 
+        상관없이 동일하게 일어남.
+        만약 선택자를 #parent-ul h3:hover + .child-ul로 하면 
+        마우스를 가져다 댄 상위 메뉴의 하위 메뉴들만 뜨게 되긴 하지만 
+        어찌됐건 해당 문제는 해결된다. 그러나 이 경우, 다른 문제가 발생하는데, 
+        상위 메뉴에 마우스를 가져다 대어 하위 메뉴를 부른 후, 바로 
+        하위 메뉴로 마우스를 이동하려고 하면 다시 하위 메뉴가 사라져 
+        사용자가 하위 메뉴를 선택할 수 없게 되는 문제가 있다. 
+        이러한 문제들은 결국 display: none, block이라는 전혀 다른 속성을 
+        사용하여 해결할 수 있지만, 이 경우 애니메이션 효과를 넣을 수 없다. 
+        정상적으로 드롭다운 메뉴가 보이면서도 그 과정에서 애니메이션 효과를 
+        넣을 수 있는 방법이 있는지는 아직 모르겠음.
+    */
+    opacity: 1;
+    transform: translateY(0px);
+    /* --- */
+}
+.child-ul li:hover {
+    background-color: #EB9F6A;
+}

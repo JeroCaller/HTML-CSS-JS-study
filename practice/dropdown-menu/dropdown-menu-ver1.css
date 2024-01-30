@@ -1,0 +1,55 @@
+nav {
+    /* nav 내 모든 자식 요소들을 수평 중앙 정렬 */
+    display: flex;
+    justify-content: center;
+}
+ul {
+    list-style: none;
+}
+
+#parent-ul > li {
+    float: left;
+    width: 150px;
+    margin-right: 10px;
+    padding: 0px;
+    text-align: center;
+}
+#parent-ul h3 {
+    margin: 0px;
+    height: 40px;
+    /* 글자를 박스의 정중앙에 배치 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* --- */
+    background-color: #6665AD;
+    color: #EBD983;
+}
+
+.child-ul {
+    position: relative;
+    padding: 0px;
+    display: none;
+}
+.child-ul a {
+    text-decoration: none;
+    color: brown;
+}
+.child-ul li {
+    height: 50px;
+    /* 글자를 박스의 정중앙에 배치 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* --- */
+    background-color: #13BEEB;
+    color: #EBA86A;
+    transition: all 0.5s;
+}
+
+#parent-ul:hover .child-ul {
+    display: block;
+}
+.child-ul li:hover {
+    background-color: #EB9F6A;
+}
