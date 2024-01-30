@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #toplevel-container {
+            margin: 10px auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .container {
+            width: 400px;
+            height: 400px;
+            margin: 10px auto;
+            border: 1px solid blue;
+            display: flex;
+        }
+        .box {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+        }
+        #align1 {
+            justify-content: center;
+        }
+        #align2 {
+            align-items: center;
+        }
+        #align-center {
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="toplevel-container">
+        <div class="container" id="align1">
+            <div class="box">Box</div>
+        </div>
+        <div class="container" id="align2">
+            <div class="box">Box</div>
+        </div>
+        <div class="container" id="align-center">
+            <div class="box">Box</div>
+        </div>
+    </div>
+</body>
+</html>
