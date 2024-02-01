@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #container1 {
+            border: 2px solid blue;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+            grid-template-rows: 100px;
+            margin: 30px;
+        }
+        #container2 {
+            border: 2px solid blue;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+            grid-template-rows: 100px;
+            margin: 30px;
+        }
+        .box {
+            border: 1px solid black;
+        }
+        .box p {
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container1">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+    <div id="container2">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+</body>
+</html>
