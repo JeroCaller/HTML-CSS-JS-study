@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #container {
+            border: 1px solid grey;
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            grid-template-rows: repeat(4, 100px);
+            width: 400px;
+            margin: 0px auto;
+        }
+        .box {
+            border: 1px solid black;
+        }
+        .bluebox {
+            background-color: blue;
+        }
+        .blue-grid-box {
+            grid-column: 1/4;
+        }
+        .redbox {
+            background-color: red;
+        }
+        .red-grid-box {
+            grid-row: 2/5;
+        }
+        .yellowbox {
+            background-color: yellow;
+        }
+        .yellow-grid-box1 {
+            grid-row: 2/4;
+        }
+        .yellow-grid-box2 {
+            grid-row: 3/5;
+        }
+        .sky-grid-box {
+            background-color: skyblue;
+            grid-column: 4/5;
+            grid-row: 1/5;
+        }
+    </style>
+</head>
+<body>
+    <h3 style="text-align: center;">Tetris</h3>
+    <div id="container">
+        <div class="box blue-grid-box bluebox">1</div>
+        <div class="box sky-grid-box">2</div>
+        <div class="box red-grid-box redbox">3</div>
+        <div class="box yellow-grid-box1 yellowbox">4</div>
+        <div class="box bluebox">5</div>
+        <div class="box yellow-grid-box2 yellowbox">6</div>
+        <div class="box redbox">7</div>
+    </div>
+</body>
+</html>
