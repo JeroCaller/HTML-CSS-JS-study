@@ -1,18 +1,13 @@
-let user = prompt("당신의 국적을 작성해주세요.");
-
-switch (user) {
-    case '한국':
-    case '대한민국':
-    case '남한':
-    case 'Korea':
-    case 'South Korea':
-        document.write("만나서 반갑습니다!");
-        break;
-    case 'USA':
-    case 'US':
-    case '미국':
-    case '미합중국':
-    case 'America':
-        document.write("Nice to meet you!");
-        break;
+let var1 = () => 'Useless function';
+let var2 = n => {
+    let total = 0;
+    for(let i = 1; i <= n; i++) {
+        total += i;
+    }
+    return total;
 }
+let var3 = (x, y) => x + y;
+
+console.log(var1());
+console.log(var2(10));
+console.log(var3(2, 3));
