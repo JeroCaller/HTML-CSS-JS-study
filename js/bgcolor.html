@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #container {
+            border: 1px solid grey;
+            width: 80%;
+            height: 500px;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        let selector = document.querySelector('#container');
+        selector.onclick = changeBgColor;
+
+        function changeBgColor() {
+            selector.style.backgroundColor = "blue";
+        }
+    </script>
+</body>
+</html>
