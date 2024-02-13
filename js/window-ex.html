@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 현재 웹 페이지의 크기를 확인하는 웹 페이지.-->
+    <div id="window-info">
+        <p></p>
+    </div>
+    <input type="button" value="현재 웹 페이지 크기 확인" id="control-window">
+    <script>
+        let windowInfoP = document.querySelector('#window-info p');
+        let getInfoButton = document.querySelector('#control-window');
+        
+        function updateWindowSize() {
+            windowInfoP.textContent = `현재 웹 페이지의 너비, 높이는 각각 ${window.innerWidth}px, ${window.innerHeight}px 입니다.`;
+        }
+
+        getInfoButton.addEventListener("click", updateWindowSize);
+        updateWindowSize();
+    </script>
+</body>
+</html>
