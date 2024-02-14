@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+            margin-top: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="info">
+            <p></p>
+        </div>
+        <div id="back">
+            <p>이전 페이지로 가고자 한다면 다음의 버튼을 클릭하세요.</p>
+            <button id="back-btn">이전 페이지로 이동</button>
+        </div>
+        <div id="forward">
+            <p>다음 페이지로 가고자 한다면 다음의 버튼을 클릭하세요.</p>
+            <button id="forward-btn">다음 페이지로 이동</button>
+        </div>
+        <div id="go-back">
+            <p>history.go(-1)</p>
+            <p>이전 페이지로 가고자 한다면 다음의 버튼을 클릭하세요.</p>
+            <button id="go-back-btn">이전 페이지로 이동</button>
+        </div>
+        <div id="go-forward">
+            <p>history.go(1)</p>
+            <p>다음 페이지로 가고자 한다면 다음의 버튼을 클릭하세요.</p>
+            <button id="go-forward-btn">다음 페이지로 이동</button>
+        </div>
+    </div>
+    <script>
+        let infoP = document.querySelector('#info p');
+        infoP.textContent = `현재 방문 사이트 수는 ${history.length}개입니다.`;
+
+        let backBtn = document.querySelector("#back-btn");
+        backBtn.onclick = () => history.back();
+
+        let forwardBtn = document.querySelector("#forward-btn");
+        forwardBtn.onclick = () => history.forward();
+
+        let goBackBtn = document.querySelector("#go-back-btn");
+        goBackBtn.onclick = () => history.go(-1);
+
+        let goForwardBtn = document.querySelector('#go-forward-btn');
+        goForwardBtn.onclick = () => history.go(1);
+    </script>
+</body>
+</html>

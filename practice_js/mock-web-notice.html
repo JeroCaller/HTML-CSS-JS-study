@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #container {
+            background-color:antiquewhite;
+            color:darkblue;
+            padding: 10px;
+            margin: 0px;
+            position: relative;
+        }
+        h1 {
+            text-align: center;
+        }
+        #container > ul > li {
+            margin: 30px;
+        }
+        .sub-ul li {
+            margin: 10px;
+        }
+        button {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>공지사항</h1>
+        <ul>
+            <li>
+                전자 도서관 구독 서비스 요금이 다음과 같이 인하되었습니다. 
+                <ul class="sub-ul">
+                    <li>Basic : <s>6,000원</s> -> 4,000원</li>
+                    <li>Premium : <s>13,000원</s> -> 10,000원</li>
+                </ul>
+            </li>
+            <li>
+                점검 안내. 전자 도서관 점검이 있을 예정이니 참고 바랍니다. 
+                <ul class="sub-ul">
+                    <li>일시 : 20XX년 X월 XX일 오전 03:00 ~ 09:00</li>
+                    <li>점검 내용 : 오류 해결, UI 개선</li>
+                </ul>
+                이 시간 동안에는 저희 사이트를 이용할 수 없으니 양해바랍니다.
+            </li>
+        </ul>
+        <button onclick="javascript:window.close();">닫기</button>
+    </div>
+</body>
+</html>

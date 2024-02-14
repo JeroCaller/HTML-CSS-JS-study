@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let popupOpen = window.open("mock-web-notice.html", "notice", "width=500, height=470, left=300, top=100");
+        console.log(popupOpen);
+        console.log(typeof popupOpen);
+        if (popupOpen === null) {
+            alert("필독 사항 팝업창을 보시려면 팝업창 차단을 해제하고 새로고침 하세요.");
+        }
+    </script>
+</body>
+</html>
