@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>검색 엔진 목록</h1>
+        </header>
+        <main>
+            <p>버튼 클릭 시 현재 페이지에서 해당 페이지로 이동됩니다.</p>
+            <ul>
+                <li>
+                    <p>네이버 (Naver)</p>
+                    <button id="to-naver">네이버로 이동하기</button>
+                </li>
+                <li>
+                    <p>구글 (Google)</p>
+                    <button id="to-google">구글로 이동하기</button>
+                </li>
+                <li>
+                    <p>다음 (Daum)</p>
+                    <button id="to-daum">다음으로 이동하기</button>
+                </li>
+            </ul>
+        </main>
+        <footer>
+            <p></p>
+        </footer>
+    </div>
+    <script>
+        let currentUrl = document.querySelector('footer p');
+        currentUrl.textContent = `현재 웹 페이지 주소: ${location.href}`;
+
+        const urlTable = {
+            'to-naver': "https://www.naver.com/",
+            "to-google": "https://www.google.co.kr/",
+            "to-daum": "https://www.daum.net/",
+        }
+
+        let btns = document.querySelectorAll('button');
+        for(const btn of btns.values()) {
+            btn.onclick = () => location.assign(urlTable[btn.id]);
+        }
+    </script>
+</body>
+</html>
