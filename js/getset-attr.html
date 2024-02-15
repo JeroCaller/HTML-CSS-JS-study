@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #container {
+            border: 1px solid black;
+            margin: 10px auto;
+            padding: 10px;
+        }
+        #container div {
+            border: 1px solid grey;
+            margin: 20px auto;
+            padding: 10px;
+            width: 80%;
+        }
+        #msg {
+            height: 50px;
+            text-align: center;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="msg"><p style="color: blueviolet;">한 권짜리 프롤로그</p></div>
+        <div id="get-attr">
+            <button>속성 보기</button>
+            <p></p>
+        </div>
+        <div id="set-attr">
+            <button>속성 바꾸기</button>
+        </div>
+    </div>
+    <script>
+        let msgDiv = document.querySelector('#msg');
+        let getDiv = document.querySelector('#get-attr');
+        let setDiv = document.querySelector('#set-attr');
+        getDiv.querySelector('button').onclick = () => {
+            getDiv.querySelector('p').innerText = msgDiv.querySelector('p').getAttribute('style');
+        }
+        setDiv.querySelector('button').onclick = (event) => {
+            msgDiv.querySelector('p').setAttribute('style', 'color: brown; background-color:bisque;');
+        }
+
+        // 스타일 변경
+        for(let ch of getDiv.childNodes.values()) {
+            ch.style = "display: inline-block";
+        }
+    </script>
+</body>
+</html>
