@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 1px solid black;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #c {
+            width: 50px;
+            height: 50px;
+            background-color: blueviolet;
+        }
+        #b {
+            width: 100px;
+            height: 100px;
+            background-color: burlywood;
+        }
+        #a {
+            width: 150px;
+            height: 150px;
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="click-boxes" class="box">
+            <div id="a" class="box">
+                <p>a</p>
+                <div id="b" class="box">
+                    <p>b</p>
+                    <div id="c" class="box"><p>c</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const cDiv = document.getElementById('c');
+        const bDiv = document.getElementById('b');
+        const aDiv = document.getElementById('a');
+        
+        function itsme(event) {
+            alert(`이벤트를 처리한 요소: ${this.id} \n이벤트가 발생한 요소: ${event.target.id}`);
+        }
+
+        cDiv.onclick = itsme;
+        bDiv.onclick = itsme;
+        aDiv.onclick = itsme;
+    </script>
+</body>
+</html>
