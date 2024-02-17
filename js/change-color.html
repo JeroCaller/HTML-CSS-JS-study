@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .element-align-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 30px auto;
+            border: 1px solid black;
+        }
+        .box p {
+            font-size: xx-large;
+        }
+        #msg {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!--버튼을 클릭하면 박스 색과 글자 색이 랜덤으로 변경되는 프로그램.-->
+    <div id="container">
+        <div class="box element-align-center">
+            <p>HI!</p>
+        </div>
+        <div class="element-align-center">
+            <button>색상 변경</button>
+        </div>
+        <div id="msg">
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+    <script>
+        const box = document.querySelector('.box');
+        const btn = document.querySelector('button');
+        const msg = document.querySelectorAll('#msg p');
+
+        function getRandomRGB() {
+            /**
+             * 주어진 정수 범위 내에서 무작위로 정수 하나를 추출하여 반환하는 함수. 
+               minInt, maxInt도 범위에 포함된다.
+             * @param {number} minInt
+             * @param {number} maxInt
+             * @returns {number}
+             */
+            function getRandomInt(minInt, maxInt) {
+                let range = maxInt - minInt + 1;
+                return Math.floor(Math.random() * range) + minInt;
+            }
+
+            let rgb = [0, 0, 0];
+            rgb = rgb.map(() => getRandomInt(0, 255));
+            return rgb;
+        }
+
+        btn.addEventListener('click', () => {
+            function setRGB(idx, info) {
+                let [r, g, b] = getRandomRGB();
+                msg[idx].innerText = `${info} 색상 rgb: ${r}, ${g}, ${b}`;
+                return `rgb(${r}, ${g}, ${b})`;
+            }
+
+            let info = ['배경', '글자'];
+            box.style.backgroundColor = setRGB(0, info[0]);
+            box.style.color = setRGB(1, info[1]);
+            /*
+            let [r, g, b] = getRandomRGB();
+            box.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            msg[0].innerText = `${info} 색상 rgb: ${r}, ${g}, ${b}`;
+            [r, g, b] = getRandomRGB();
+            box.style.color = `rgb(${r}, ${g}, ${b})`;
+            msg[1].innerText = `글자 색상 rgb: ${r}, ${g}, ${b}`;
+            */
+        });
+    </script>
+</body>
+</html>

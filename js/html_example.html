@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+        .box {
+            border: 1px solid black;
+            margin: 10px auto;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
 </head>
 <body>
+    <div class="box"></div>
+    <script>
+        const box = document.querySelector('.box');
+        box.style = 'background-color: blue;';
+    </script>
 </body>
 </html>
