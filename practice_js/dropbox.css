@@ -1,0 +1,43 @@
+.dropbox {
+    width: 300px;
+    height: 20px;
+    display: inline-block;  /* 다른 요소들이 양 옆에 놓일 수 있도록 inline-block으로 변경 */
+    margin-top: 10px;
+}
+.dropbox ul {
+    list-style: none;
+    margin: 0px;
+    padding-left: 0px;
+    display: none;
+}
+.dropbox ul li {
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: grey black;
+    width: 300px;
+    height: 20px;
+    padding: 5px;
+    background-color: white;
+}
+.display-dropbox {
+    width: 300px;
+    height: 20px;
+    border: 1px solid grey;
+    padding: 5px;
+    background-color: white;
+}
+.display-dropbox p {
+    padding: 0px;
+    margin: 0px;
+    float: left;
+}
+.display-dropbox span {
+    float: right;
+}
+.dropbox:hover {
+    /*
+        마우스 커서 모양을 바꾸기 위한 CSS 속성은 cursor를 이용하면 된다. 자세한 사항은 아래 사이트 참조.
+        https://developer.mozilla.org/ko/docs/Web/CSS/cursor
+    */
+    cursor: pointer;
+}

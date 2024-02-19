@@ -2,9 +2,11 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="이미지 조작 예시">
     <title>전자 상거래 사이트 예시</title>
     <link rel="stylesheet" href="image-ex.css">
-    <meta name="description" content="이미지 조작 예시">
+    <link rel="stylesheet" href="dropbox.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <div id="container">
@@ -19,13 +21,52 @@
                 </ul>
             </nav>
         </header>
+        <aside>sidebar</aside>
         <main>
-            <sector id="image-container">
-                <img src="..\images\coffee.png" width="200"
-                height="200" title="이미지 예시">
-            </sector>
+            <section id="image-container">
+                <img src="..\images\coffee.png" width="300"
+                height="300" title="이미지 예시" id="main-img">
+                <ul id="display-imgs">
+                    <li><img src="..\images\plants.jpeg" class="small-img"></li>
+                    <li><img src="..\images\flowers.jpeg" class="small-img"></li>
+                    <li><img src="..\images\desert-world.jpeg" class="small-img"></li>
+                </ul>
+            </section>
+            <section id="product-info">
+                <h2>분말 커피 50묶음 1박스</h2>
+                <p style="text-align: right;">20,000원</p>
+                <div class="dropbox">
+                    <div class="display-dropbox">
+                        <p>종류</p>
+                        <span class="material-symbols-outlined">
+                            arrow_drop_down
+                        </span>
+                    </div>
+                    <ul>
+                        <li>모카</li>
+                        <li>카페라떼</li>
+                        <li>바닐라라떼</li>
+                        <li>선택 취소</li>
+                    </ul>
+                </div>
+                <div class="dropbox">
+                    <div class="display-dropbox">
+                        <p>추가 상품</p>
+                        <span class="material-symbols-outlined">
+                            arrow_drop_down
+                        </span>
+                    </div>
+                    <ul>
+                        <li>종이컵 50개 1묶음</li>
+                        <li>티스푼 1개</li>
+                        <li>선택 취소</li>
+                    </ul>
+                </div>
+            </section>
+            <section id="product-detail">상품 상세 페이지</section>
         </main>
     </div>
     <script src="image-ex.js"></script>
+    <srcipt src="dropbox.js"></srcipt>
 </body>
 </html>
