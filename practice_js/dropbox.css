@@ -1,8 +1,14 @@
+#dropbox-container {
+    position: relative;
+    height: 80px;
+    margin: 20px;
+}
 .dropbox {
     width: 300px;
     height: 20px;
     display: inline-block;  /* 다른 요소들이 양 옆에 놓일 수 있도록 inline-block으로 변경 */
     margin-top: 10px;
+    position: absolute;
 }
 .dropbox ul {
     list-style: none;
@@ -17,7 +23,7 @@
     width: 300px;
     height: 20px;
     padding: 5px;
-    background-color: white;
+    background-color:antiquewhite;
 }
 .display-dropbox {
     width: 300px;
@@ -40,4 +46,12 @@
         https://developer.mozilla.org/ko/docs/Web/CSS/cursor
     */
     cursor: pointer;
+}
+
+#db1 {
+    z-index: 2;
+}
+#db2 {
+    top: 40px;
+    z-index: 1;
 }

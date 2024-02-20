@@ -35,38 +35,80 @@
             <section id="product-info">
                 <h2>분말 커피 50묶음 1박스</h2>
                 <p style="text-align: right;">20,000원</p>
-                <div class="dropbox">
-                    <div class="display-dropbox">
-                        <p>종류</p>
-                        <span class="material-symbols-outlined">
-                            arrow_drop_down
-                        </span>
+                <div id="dropbox-container">
+                    <div class="dropbox" id="db1">
+                        <div class="display-dropbox">
+                            <p>종류</p>
+                            <span class="material-symbols-outlined">
+                                expand_more
+                            </span>
+                        </div>
+                        <ul>
+                            <li>모카</li>
+                            <li>카페라떼</li>
+                            <li>바닐라라떼</li>
+                            <li>선택 취소</li>
+                        </ul>
                     </div>
-                    <ul>
-                        <li>모카</li>
-                        <li>카페라떼</li>
-                        <li>바닐라라떼</li>
-                        <li>선택 취소</li>
-                    </ul>
+                    <div class="dropbox" id="db2">
+                        <div class="display-dropbox">
+                            <p>추가 상품</p>
+                            <span class="material-symbols-outlined">
+                                expand_more
+                            </span>
+                        </div>
+                        <ul>
+                            <li>종이컵 50개 1묶음 (3000원)</li>
+                            <li>티스푼 1개 (1000원)</li>
+                            <li>선택 취소</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="dropbox">
-                    <div class="display-dropbox">
-                        <p>추가 상품</p>
-                        <span class="material-symbols-outlined">
-                            arrow_drop_down
-                        </span>
+                <div id="choice-result">
+                    <div class="item-box" id="item-1">
+                        <ul>
+                            <li>품목: </li>
+                            <li>총 가격: 20000원</li>
+                            <li>수량: 1</li>
+                        </ul>
+                        <div class="buttons">
+                            <button class="up">
+                                <span class="material-symbols-outlined">
+                                    arrow_drop_up
+                                </span>
+                            </button>
+                            <button class="down">
+                                <span class="material-symbols-outlined">
+                                    arrow_drop_down
+                                </span>
+                            </button>
+                        </div>
                     </div>
-                    <ul>
-                        <li>종이컵 50개 1묶음</li>
-                        <li>티스푼 1개</li>
-                        <li>선택 취소</li>
-                    </ul>
+                    <div class="item-box" id="item-2">
+                        <ul>
+                            <li>품목: </li>
+                            <li>총 가격: </li>
+                            <li>수량: 1</li>
+                        </ul>
+                        <div class="buttons">
+                            <button class="up">
+                                <span class="material-symbols-outlined">
+                                    arrow_drop_up
+                                </span>
+                            </button>
+                            <button class="down">
+                                <span class="material-symbols-outlined">
+                                    arrow_drop_down
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="total">총합: <strong></strong>원</div>
                 </div>
             </section>
             <section id="product-detail">상품 상세 페이지</section>
         </main>
     </div>
     <script src="image-ex.js"></script>
-    <srcipt src="dropbox.js"></srcipt>
 </body>
 </html>
