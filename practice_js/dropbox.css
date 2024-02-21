@@ -4,7 +4,7 @@
     margin: 20px;
 }
 .dropbox {
-    width: 300px;
+    width: 80%;
     height: 20px;
     display: inline-block;  /* 다른 요소들이 양 옆에 놓일 수 있도록 inline-block으로 변경 */
     margin-top: 10px;
@@ -26,7 +26,7 @@
     background-color:antiquewhite;
 }
 .display-dropbox {
-    width: 300px;
+    width: 80%;
     height: 20px;
     border: 1px solid grey;
     padding: 5px;

@@ -1,3 +1,7 @@
+body {
+    position: relative;
+    z-index: 0;
+}
 header {
     border: 1px solid black;
     grid-area: header;
@@ -13,9 +17,24 @@ main {
         "img-cont prod-info"
         "prod-detail prod-detail";
 }
+#lightbox {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+#lightbox img {
+    position: absolute;
+    transform: translate(75%, 3%);
+}
 #image-container {
     grid-area: img-cont;
     margin: 0px auto;
+}
+#image-container img {
+    cursor: pointer;
 }
 #product-info {
     grid-area: prod-info;
