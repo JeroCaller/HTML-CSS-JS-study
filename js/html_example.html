@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <style>
-        .box {
-            border: 1px solid black;
-            margin: 10px auto;
-            width: 200px;
-            height: 200px;
-            background-color: green;
-        }
-    </style>
 </head>
 <body>
-    <div class="box"></div>
+    <ul>
+        <li>hi</li>
+        <li style="color:red;">nice</li>
+        <li>to</li>
+        <li>meet</li>
+        <li>you</li>
+    </ul>
     <script>
-        const box = document.querySelector('.box');
-        box.style = 'background-color: blue;';
+        const qs = document.querySelector('ul');
+        const ullist = document.getElementsByTagName('li');
+        console.log(ullist[0].parentNode);
+        console.log(typeof ullist[0].parentNode);
+        console.log(ullist[0].parentElement);
+        console.log(typeof ullist[0].parentElement);
     </script>
 </body>
 </html>

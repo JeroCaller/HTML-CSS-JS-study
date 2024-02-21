@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        #more-info {
+            border: 1px solid black;
+            width: 500px;
+            margin: 10px auto;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        #more-info > span, #more-info > p {
+            cursor: pointer;
+        }
+        #info-container {
+            border: 1px solid grey;
+            margin: 10px;
+            padding: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="more-info">
+        <span class="material-symbols-outlined">
+            chevron_right
+        </span>
+        <p>자세히 보기</p>
+    </div>
+    <script>
+        const moreInfo = document.querySelector('#more-info');
+        const icon = moreInfo.querySelector('span');
+        const infoText = moreInfo.querySelector('#more-info > p');
+
+        const closedIcon = 'chevron_right';
+        const openedIcon = 'expand_more';
+
+        let alreadyCreated = false;
+
+        function changeIcon() {
+            if (icon.innerText === closedIcon) {
+                icon.innerText = openedIcon;
+                infoText.textContent = '닫기';
+            } else {
+                icon.innerText = closedIcon;
+                infoText.textContent = '자세히 보기';
+            }
+        }
+        icon.addEventListener('click', changeIcon);
+        infoText.addEventListener('click', changeIcon);
+
+        function addDetailInfo() {
+            const infoContainer = document.createElement('div');
+            const infoId = document.createAttribute('id');
+            infoId.value = 'info-container';  // # 기호를 앞에 붙이면 안된다.
+            infoContainer.setAttributeNode(infoId);
+
+            const newP = document.createElement('p');
+            const newText = document.createTextNode("사실 여긴 자세히 볼게 없습니다. 대신 귀여운 고양이를 보여드리겠습니다.");
+            newP.appendChild(newText);
+
+            const newImage = document.createElement('img');
+            const imageSrc = document.createAttribute('src');
+            const imageWidth = document.createAttribute('width');
+            const imageHeight = document.createAttribute('height');
+            imageSrc.value = '..\\images\\cutecat.jpeg';
+            imageWidth.value = '400px';
+            imageHeight.value = '400px';
+            newImage.setAttributeNode(imageSrc);
+            newImage.setAttributeNode(imageWidth);
+            newImage.setAttributeNode(imageHeight);
+
+            infoContainer.appendChild(newP);
+            infoContainer.appendChild(newImage);
+
+            moreInfo.appendChild(infoContainer);
+        }
+
+        function showOrHideDetail() {
+            if (icon.innerText === openedIcon) {
+                if (alreadyCreated === false) {
+                    addDetailInfo();
+                    alreadyCreated = true;
+                }
+                document.getElementById('info-container').style.display = 'block';
+            } else {
+                document.getElementById('info-container').style.display = 'none';
+            }
+        }
+
+        icon.addEventListener('click', showOrHideDetail);
+        infoText.addEventListener('click', showOrHideDetail);
+    </script>
+</body>
+</html>
