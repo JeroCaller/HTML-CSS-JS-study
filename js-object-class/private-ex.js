@@ -1,20 +1,20 @@
 class Car {
-    _fuel = 0;  // protected 프로퍼티
+    #fuel = 0;  // private 프로퍼티
 
     set fuel(arg) {
         if (arg < 0) {
             throw new Error("연료량은 음수가 되어선 안됩니다.");
         }
-        this._fuel = arg;
+        this.#fuel = arg;
     } 
 
     get fuel() {
-        return this._fuel;
+        return this.#fuel;
     }
 }
 
 let car = new Car();
 car.fuel = 20;
 console.log(car.fuel);
-console.log(car._fuel);  // protected 필드는 접근 가능하긴 하다. 
+// console.log(car.#fuel);  // 에러 발생. private 필드는 외부에서 직접 접근 불가.
 // car.fuel = -1;  // 에러 발생.
