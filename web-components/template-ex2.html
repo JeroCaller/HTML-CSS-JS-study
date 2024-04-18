@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template id="mytemp">
+        <style>
+            #label-container {
+                border: 2px solid black;
+                background-color: grey;
+                display: inline-block;
+                padding: 10px;
+            }
+        </style>
+        <div id="label-container">
+            <p>만나서 반가워요!</p>
+        </div>
+    </template>
+    <script>
+        customElements.define('custom-label', class extends HTMLElement {
+            connectedCallback() {
+                this.attachShadow({mode: 'open'});
+                this.shadowRoot.append(mytemp.content.cloneNode(true));
+            }
+        });
+    </script>
+    <custom-label name="자바스"></custom-label>
+</body>
+</html>
