@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <todo-list>
+        <h1 slot="title">My Todo list</h1>
+    </todo-list>
+    <script>
+        class TodoList extends HTMLElement {
+            connectedCallback() {
+                const shadow = this.attachShadow({mode: 'open'});
+
+                shadow.innerHTML = `
+                    <slot name="title"></slot>
+                    <ul>
+                        <slot name="list"></slot>
+                    </ul>
+                `;
+
+                // shadow root 자체에는 이벤트 핸들러를 가질 수 없다. 
+                // 따라서, shadow root의 첫 자식 요소를 이용한다. 
+                shadow.firstElementChild.addEventListener('slotchange', 
+                    e => alert("slot change : " + e.target.name)
+                );
+                shadow.children[1].addEventListener('slotchange',
+                    e => alert("slot change : " + e.target.name)
+                );
+            }
+        }
+        customElements.define("todo-list", TodoList);
+
+        const todo = document.querySelector("todo-list");
+        
+        // (삽입할 위치, 새로 삽입할 노드의 HTML 텍스트)
+        todo.insertAdjacentHTML("beforeEnd", '<li slot="list">공부하기</li>');
+        todo.querySelector('[slot="title"]').innerHTML = `내 할일 리스트`;
+    </script>
+</body>
+</html>

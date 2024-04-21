@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class TodoList extends HTMLElement {
+            connectedCallback() {
+                const shadow = this.attachShadow({mode: 'open'});
+                shadow.innerHTML = `
+                    <style>
+                        ::slotted(span) {
+                            color: beige;
+                            background-color: grey;
+                        }
+                        div {
+                            margin: 10px;
+                        }
+                        .else {
+                            border: 1px solid black;
+                            display: inline-block;
+                            padding: 10px;
+                        }
+                    </style>
+                    <div>1. 
+                        <slot name="todo-1"></slot>
+                    </div>
+                    <div>2. 
+                        <slot name="todo-2"></slot>
+                    </div>
+                    <div class="else">
+                        <slot></slot>
+                    </div>
+                    <div class="else">
+                        <slot></slot>
+                    </div>
+                `;
+            }
+        }
+        customElements.define("todo-list", TodoList);
+    </script>
+    <todo-list>
+        <p>굿굿</p>
+        <span slot="todo-1">공부하기</span>
+        <span slot="todo-2">집안일하기</span>
+        <p>배드배드</p>
+    </todo-list>
+</body>
+</html>

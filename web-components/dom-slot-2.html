@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+    <script>
+        class TodoList extends HTMLElement {
+            connectedCallback() {
+                const shadow = this.attachShadow({mode: 'open'});
+
+                shadow.innerHTML = `
+                    <slot name="title"></slot>
+                    <ul>
+                        <slot name="list"></slot>
+                    </ul>
+                `;
+            }
+        }
+        customElements.define("todo-list", TodoList);
+    </script>
+    <todo-list>
+        <h1 slot="title">My Todo list</h1>
+        <li slot="list">공부하기</li>
+        <li slot="list">집안일하기</li>
+    </todo-list>
+</body>
+</html>
