@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        span {
+            padding: 1em;
+            color:crimson;
+        }
+    </style>
+    <script>
+        customElements.define('person-info', class extends HTMLElement {
+            connectedCallback() {
+                this.attachShadow({mode: 'open'});
+                // ::slotted(div span), ::slotted(div) span 모두 적용안됨.
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        ::slotted(div) {
+                            background-color: blue;
+                            font-style: italic;
+                        }
+                    </style>
+                    <p>이름: <slot name='person-name'></slot></p>
+                `;
+            }
+        });
+    </script>
+    <person-info>
+        <div slot="person-name"><span>자바스</span></div>
+    </person-info>
+</body>
+</html>

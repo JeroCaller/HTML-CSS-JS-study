@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :host {
+            display: inline-block;
+            position: absolute;
+            left: 45%;
+            top: 30%;
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        class MsgBox extends HTMLElement {
+            connectedCallback() {
+                const shadow = this.attachShadow({mode: 'open'});
+                shadow.innerHTML = `<slot></slot>`;
+            }
+        }
+
+        class MyLabel extends HTMLElement {
+            connectedCallback() {
+                const shadow = this.attachShadow({mode: 'open'});
+                shadow.innerHTML = `<slot></slot>`;
+            }
+        }
+
+        customElements.define("msg-box", MsgBox);
+        customElements.define("my-label", MyLabel);
+    </script>
+    <msg-box>good</msg-box>
+    <my-label>great</my-label>
+</body>
+</body>
+</html>
