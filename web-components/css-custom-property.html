@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        /* light DOM에서의 스타일 */
+        my-profile {
+            --profile-background-color: skyblue;
+            --profile-text-color: brown;
+        }
+    </style>
+    <template id="mytemp">
+        <style>
+            /* shadow DOM에 적용될 스타일 */
+            #person-info > li {
+                background-color: var(--profile-background-color);
+                color: var(--profile-text-color);
+                width: 10em;
+                padding: 0.5em;
+                margin: 0.5em;
+            }
+        </style>
+        <ul id="person-info">
+            <li>이름: <slot name="person-name"></slot></p>
+            <li>생년월일: <slot name="birthday"></slot></p>
+        </ul>
+    </template>
+    <script>
+        customElements.define('my-profile', class extends HTMLElement {
+            connectedCallback() {
+                this.attachShadow({mode: 'open'});
+                this.shadowRoot.append(document.getElementById('mytemp').content.cloneNode(true));
+            }
+        });
+    </script>
+    <my-profile>
+        <span slot="person-name">자바스</span>
+        <span slot="birthday">1990/1/1</span>
+    </my-profile>
+</body>
+</html>
