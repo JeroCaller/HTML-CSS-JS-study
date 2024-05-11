@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        customElements.define('my-message', class extends HTMLElement {
+            connectedCallback() {
+                this.attachShadow({mode: 'open'});
+                this.shadowRoot.innerHTML = `<button>
+                    알림 버튼
+                </button>`;
+
+                // shadow DOM 내부에서 click 이벤트에 대한 이벤트 핸들러 추가.
+                this.shadowRoot.firstElementChild.addEventListener('click', 
+                e => alert(`shadow DOM에서의 target: ${e.target.tagName}`));
+            }
+        });
+    </script>
+
+    <my-message></my-message>
+
+    <script>
+        const MsgButton = document.querySelector('my-message');
+        // light DOM에서 click 이벤트에 대한 이벤트 핸들러 추가.
+        MsgButton.addEventListener('click', 
+        e => alert(`document에서의 target: ${e.target.tagName}`));
+    </script>
+</body>
+</html>

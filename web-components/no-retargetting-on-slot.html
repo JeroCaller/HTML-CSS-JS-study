@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        customElements.define('some-thing', class extends HTMLElement {
+            connectedCallback() {
+                this.attachShadow({mode: 'open'});
+                this.shadowRoot.innerHTML = `
+                <style>
+                    .small-box {
+                        display: inline-block;
+                        border: 1px solid black;
+                        padding: 1em;
+                        margin: 1em;
+                    }
+                </style>
+                <div id="box-container">
+                    <div class="small-box">
+                        <p>From shadow DOM</p>
+                    </div>
+                    <div class="small-box">
+                        <p>
+                            <slot name="label-name"></slot>
+                        </p>
+                    </div>
+                </div>`;
+
+                this.shadowRoot.children[1].addEventListener('click', 
+                e => alert(`shadow DOM에서의 event target : ${e.target.tagName}`));
+            }
+        });
+    </script>
+
+    <some-thing>
+        <span slot="label-name">자바스</span>
+    </some-thing>
+
+    <script>
+        const myCustomElement = document.querySelector('some-thing');
+
+        myCustomElement.addEventListener('click', 
+        e => alert(`light DOM에서의 event target: ${e.target.tagName}`));
+    </script>
+</body>
+</html>
