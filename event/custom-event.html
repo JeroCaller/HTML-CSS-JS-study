@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 id="person-info">자바스님에 대한 정보입니다.</p>
+    <script>
+        const title = document.getElementById('person-info');
+        let infoEvent = new CustomEvent("showInfo", {
+            detail: {name: "자바스", age: "20", job: "Web developer"}
+        });
+        title.addEventListener("showInfo", e => {
+            const infoDiv = document.createElement('div');
+            infoDiv.innerHTML = `<ul>
+                <li>이름: ${e.detail.name}</li>
+                <li>나이: ${e.detail.age}</li>
+                <li>직업: ${e.detail.job}</li>
+            </ul>`;
+            document.body.append(infoDiv);
+        });
+        title.dispatchEvent(infoEvent);
+    </script>
+</body>
+</html>

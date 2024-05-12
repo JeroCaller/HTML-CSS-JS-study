@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="message">안녕하세요.</p>
+    <script>
+        let myEventName = "HelloWorld";
+
+        document.addEventListener(myEventName, e => {
+            alert(`${e.target.tagName}에서 인사 드립니다.`);
+        });
+
+        let myEvent = new Event(myEventName, {bubbles: true});
+        const myMessage = document.querySelector('#message');
+        myMessage.dispatchEvent(myEvent);
+    </script>
+</body>
+</html>
