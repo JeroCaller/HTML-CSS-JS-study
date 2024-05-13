@@ -13,9 +13,8 @@
         const myButton = document.querySelector('#mybutton');
         myButton.dispatchEvent(event);
 
-        
-        document.addEventListener('click', () => {
-            alert("클릭되었습니다.");
+        document.addEventListener('click', (e) => {
+            alert(`${e.target.tagName}가 클릭되었습니다.`);
         });
     </script>
 </body>
