@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .code-box {
+            display: inline-block;
+            padding: 1em;
+        }
+        .code-box > code {
+            font-size: larger;
+            font-weight: bold;
+        }
+        .code-box > code > pre {
+            border: 1px solid blue;
+            padding: 1em;
+        }
+    </style>
+    <div class="code-box">
+        <code>
+            <pre>
+function someGreatFunc() {
+    console.log("아주 좋은 코드");
+    return true;
+}
+            </pre>
+        </code>
+        <input type="button" value="코드 숨기기">
+    </div>
+    <script>
+        const codeBox = document.querySelector('.code-box');
+        const codeSnippet = codeBox.querySelector('code');
+        const codeButton = codeBox.querySelector('input[type="button"]');
+
+        codeButton.addEventListener('click', e => {
+            let showHideEvent = new CustomEvent("showhide", {cancelable: true});
+            // === #1 ===
+            if (!codeSnippet.dispatchEvent(showHideEvent)) {
+                console.log("기본 동작이 취소되어 동작하지 않습니다.");
+                return;
+            }
+            // === #1 end ===
+
+            // ===== #3 =====
+            const hideLabel = "코드 숨기기";
+            const showLabel = "코드 보기";
+            let buttonValueAttr = codeButton.getAttribute('value');
+            if (buttonValueAttr === hideLabel) {
+                codeSnippet.style.display = "none";
+                codeButton.setAttribute('value', showLabel);
+            } else if (buttonValueAttr === showLabel) {
+                codeSnippet.style.display = "inline";
+                codeButton.setAttribute('value', hideLabel);
+            }
+            // ===== #3 end =====
+        });
+        codeSnippet.addEventListener("showhide", e => {
+            // ===== #2 ======
+            const question = `이벤트 기본 동작을 취소하겠습니까?`;
+            if(confirm(question)) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>클릭하여 이벤트 발생시키기</button>
+    <script>
+        const myButton = document.querySelector('button');
+        
+        myButton.addEventListener('click', () => {
+            console.log("클릭 이벤트 처리 시작");
+
+            let myEvent = new CustomEvent("button-clicked", {bubbles: true});
+            myButton.dispatchEvent(myEvent);
+
+            console.log("클릭 이벤트 처리 끝");
+        });
+        document.addEventListener('button-clicked', () => console.log('중첩 이벤트 발생 및 처리'));
+    </script>
+</body>
+</html>
