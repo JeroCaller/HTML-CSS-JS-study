@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #display > p {
+            border: 1px solid black;
+            width: 6.1em;
+            text-align: center;
+        }
+    </style>
+    <div id="display">
+        <p>주사위</p>
+        <button>주사위 던지기</button>
+    </div>
+    <script type="module">
+        import {getRandomInt} from './my-random.js';
+
+        const displayBox = document.getElementById('display');
+        const displayButton = displayBox.querySelector('button');
+        const displayP = displayBox.querySelector('p');
+
+        displayButton.addEventListener('click', () => {
+            displayP.innerHTML = getRandomInt(1, 6);
+        });
+    </script>
+</body>
+</html>
