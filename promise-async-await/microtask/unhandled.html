@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #error-display {
+            border: 1px solid red;
+            width: 300px;
+            height: 300px;
+            padding: 1em;
+        }
+    </style>
+    <div id="error-display"></div>
+    <script>
+        const errorDisplay = document.getElementById('error-display');
+        
+        window.addEventListener('unhandledrejection', e => {
+            errorDisplay.innerHTML = `
+            <p>에러가 발생한 프로미스: ${e.promise}</p>
+            <p>에러 메시지: ${e.reason}</p>`;
+        });
+
+        let promise = new Promise((resolve, reject) => {
+            setTimeout(() => reject(new Error("예상치 못한 에러!")));
+        });
+        setTimeout(() => {
+            promise.catch(error => console.log("거절된 프로미스로부터 에러를 잡음."))
+        }, 1000);
+    </script>
+</body>
+</html>
