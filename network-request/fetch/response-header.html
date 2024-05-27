@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        fetch(`https://jsonplaceholder.typicode.com/posts/1`)
+            .then(response => {
+                // 응답 헤더 정보 하나만 출력
+                console.log(response.headers.get('expires'));
+                
+                // 응답 헤더 정보 전체를 순회하여 출력
+                for([key, value] of response.headers) {
+                    console.log(`${key}: ${value}`);
+                }
+            });
+    </script>
+</body>
+</html>
