@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .storage {
+            width: 500px;
+            height: 400px;
+            background-color: firebrick;
+            position: relative;  /* 부모 요소의 position 속성을 relative로 설정 */
+        }
+        .box {
+            width: 200px;
+            height: 30%;
+            background-color: coral;
+            border: 2px solid black;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .storage .box:nth-child(2) {
+            position: absolute; /* absolute로 변경 */
+            left: 250px;
+            top: 130px;
+        }
+    </style>
+</head>
+<body>
+    <h1>창고</h1>
+    <div class="storage">
+        <div class="box">A4용지</div>
+        <div class="box">종이컵</div>
+        <div class="box">휴지</div>
+    </div>
+</body>
+</html>
