@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <title>구글 캘린더 차트 예제</title>
+
+  <style>
+    #calendar-chart {
+      height: 500px;
+    }
+    
+    .tooltip {
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: white;
+      font-size: medium;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    https://developers.google.com/chart/interactive/docs/quick_start?hl=ko 참고함.
+  -->
+  <div id="calendar-chart"></div>
+
+  <script type="text/javascript">
+    google.charts.load("current", {packages:["calendar"], language: 'ko'});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      let dataTable = new google.visualization.DataTable();
+      dataTable.addColumn({type: 'date', id: 'date'});
+      dataTable.addColumn({type: 'number', id: 'commits'});
+
+      // 커스텀 툴팁 설정을 위한 컬럼 추가.
+      dataTable.addColumn({type: 'string', role: 'tooltip'});
+
+      const rawData = [
+        [new Date('2024-02-03'), 1],
+        [new Date('2024-02-12'), 2],
+        [new Date('2025-03-03'), 1],
+        [new Date('2025-04-12'), 5],
+        //[new Date('2025-06-22'), 10],
+        [new Date('2025-06-25'), 3],
+      ];
+
+      /**
+       * 날짜 포맷을 yyyy-MM-dd 형식으로 맞춘다. 
+       * 
+       * @param {Date} dateObj
+       */
+      const customDateFormat = (dateObj) => {
+        const year = dateObj.getFullYear();
+        const month = String(dateObj.getMonth() + 1).padStart(2, '0'); // 월은 0부터 시작
+        const day = String(dateObj.getDate()).padStart(2, '0');
+
+        return `${year}-${month}-${day}`;
+      };
+
+      rawData.forEach(item => {
+        const date = item[0];
+        const commits = item[1];
+        const formattedDateString = customDateFormat(date);
+
+        // 툴팁에 표시할 컨텐츠
+        let tooltipContent = `<div class="tooltip">
+            <span>${formattedDateString}</span>
+            ${(commits > 0) ? `<span>커밋 수: ${commits}</span>` : ''}
+          </div>`;
+        
+        dataTable.addRow([date, commits, tooltipContent]);
+      });
+
+      let chart = new google.visualization.Calendar(document.getElementById("calendar-chart"));
+      let options = {
+        title: "연도별 커밋 수",
+        noDataPattern: {
+          backgroundColor: 'F6F1E9',
+          color: 'D3DAD9',
+        },
+        calendar: {
+          daysOfWeek: "일월화수목금토",
+        },
+        tooltip: {
+          trigger: 'focus',  // 마우스 커서 올렸을 때 표시 (기본값)
+        }
+      };
+
+      chart.draw(dataTable, options);
+    }
+  </script>
+</body>
+</html>
