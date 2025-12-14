@@ -31,7 +31,7 @@ const main = async () => {
     console.log('SQL 실행 도중 에러 발생');
     console.log(error);
   } finally {
-    db.close;
+    db.close();
   }
 };
 
